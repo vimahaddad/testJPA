@@ -1,0 +1,95 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>io.github.oliviercailloux.y2018.vimahaddad</groupId>
+	<artifactId>testJPA</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<failOnMissingWebXml>false</failOnMissingWebXml>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>8.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- The javax.servlet package contains a number of classes and interfaces 
+			We need to keep this dependency to maintain the performance of the unit test, 
+			otherwise we'll get the following error: "AVERTISSEMENT: TestEngine with 
+			ID 'junit-jupiter' failed to execute tests java.lang.NoClassDefFoundError: 
+			junit/framework/ComparisonFailure" -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>4.0.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.4.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>5.4.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mnode.ical4j</groupId>
+			<artifactId>ical4j</artifactId>
+			<version>3.0.2</version>
+		</dependency>
+		<!-- It used for Junit test -->
+		<dependency>
+			<groupId>org.glassfish</groupId>
+			<artifactId>javax.json</artifactId>
+			<version>1.1.3</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- It used for Junit test -->
+		<dependency>
+			<groupId>org.eclipse</groupId>
+			<artifactId>yasson</artifactId>
+			<version>1.0.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-all</artifactId>
+			<version>1.3</version>
+		</dependency>
+		<!-- It used for Junit test -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>2.24.5</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- It used to manage the not null -->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>27.0.1-jre</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>testJPA</finalName>
+		<plugins>
+			<!-- JUnit 5 requires Surefire version 2.22.0 or higher -->
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.22.1</version>
+			</plugin>
+		</plugins>
+	</build>
+</project>
